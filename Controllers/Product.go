@@ -28,7 +28,10 @@ func CreateProduct(c *gin.Context) {
 	} else {
 		fmt.Printf("Status:%d", status)
 		fmt.Println("")
-		c.JSON(http.StatusOK, product)
+		c.JSON(http.StatusOK, gin.H{
+			"code":    200,
+			"message": "status ok",
+			"Detail":  "Product:" + product.Name + " is created"})
 	}
 }
 
